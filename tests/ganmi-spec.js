@@ -7,9 +7,9 @@ const ganmi = require('../bin/ganmi');
 
 describe('ganmi function', () => {
 
-  afterEach(() => {
-    expect.restoreSpies();
-  });
+  // afterEach(() => {
+  //   expect.restoreSpies();
+  // });
 
   it('should call fs.watch', () => {
     const spy = spyOn(fs, 'watch');
@@ -19,6 +19,7 @@ describe('ganmi function', () => {
 
     expect(spy)
       .toHaveBeenCalled();
+    spy.restore();
   });
 
 });
