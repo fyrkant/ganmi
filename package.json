@@ -1,0 +1,37 @@
+{
+  "name": "ganmi",
+  "version": "0.0.1",
+  "description": "A super simple directory wath utility build in a very few lines of code.",
+  "main": "./bin/ganmi.js",
+  "bin": "./bin/index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha './tests/**/*-spec.js' --report lcovonly -- -R spec './bin/**/*.js' && cat ./coverage/lcov.info | coveralls",
+    "test:dev": "mocha './tests/**/*-spec.js'",
+    "test:watch": "mocha './tests/**/*-spec.js' --reporter min -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mw222rs/ganmi.git"
+  },
+  "keywords": [
+    "watch",
+    "node",
+    "directory",
+    "regex",
+    "file",
+    "execute"
+  ],
+  "author": "Mattias Wikstrom <fyrkant@gmail.com> (http://mattias.rocks)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mw222rs/ganmi/issues"
+  },
+  "homepage": "https://github.com/mw222rs/ganmi#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.6",
+    "expect": "^1.14.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "mock-fs": "^3.7.0"
+  }
+}
