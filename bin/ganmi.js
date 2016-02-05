@@ -7,10 +7,14 @@ module.exports = (inputArray) => {
   const re = new RegExp(inputArray[1]);
   const command = inputArray[2];
 
-  fs.watch(directory, (event, filename) => filename.match(re) &&
-      exec(command, (error, stdout, stderr) => error === null ?
-          console.log(stdout) :
-          console.log(`exec error: ${error}`)
-          )
-      );
+  try {
+    fs.watch(directory, (event, filename) => filename.match(re) &&
+        exec(command, (error, stdout, stderr) => error === null ?
+            console.log(stdout) :
+            console.log(`exec error: ${error}`)
+            )
+        );
+  } catch(error) {
+    throw new Error(error);
+  }
 };
