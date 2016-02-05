@@ -1,7 +1,7 @@
 {
   "name": "ganmi",
   "version": "0.0.2",
-  "description": "A super simple directory watch utility build in node.",
+  "description": "A super simple directory watch utility built in node.",
   "main": "./bin/ganmi.js",
   "bin": "./bin/index.js",
   "scripts": {
