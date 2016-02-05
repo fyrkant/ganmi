@@ -5,8 +5,7 @@
   "main": "./bin/ganmi.js",
   "bin": "./bin/index.js",
   "scripts": {
-    "test": "istanbul cover _mocha './tests/**/*-spec.js' --report lcovonly -- -R spec './bin/**/*.js' && cat ./coverage/lcov.info | coveralls",
-    "test:dev": "mocha './tests/**/*-spec.js'",
+    "test": "mocha './tests/**/*-spec.js'",
     "test:watch": "mocha './tests/**/*-spec.js' --reporter min -w"
   },
   "repository": {

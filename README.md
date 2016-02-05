@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/mw222rs/ganmi.svg?branch=master)](https://travis-ci.org/mw222rs/ganmi)
-[![Coverage Status](https://coveralls.io/repos/github/mw222rs/ganmi/badge.svg?branch=master)](https://coveralls.io/github/mw222rs/ganmi?branch=master)
 
 # ganmi
 A super simple watch tool written in node.

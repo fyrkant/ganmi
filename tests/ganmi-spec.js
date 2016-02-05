@@ -1,8 +1,11 @@
 const expect = require('expect');
 const spyOn = expect.spyOn;
-const fs = require('fs');
 
 const ganmi = require('../bin/ganmi');
+
+const fsStub = {
+  watch() { }
+};
 
 describe('ganmi function', () => {
   afterEach(() => {
@@ -10,13 +13,12 @@ describe('ganmi function', () => {
   });
 
   it('should call fs.watch with directory as first argument', () => {
-    const spy = spyOn(fs, 'watch');
-    const inputArray = ['directory', 'regex', 'command'];
+    const spy = spyOn(fsStub, 'watch');
+    const inputArray = ['.', 'regex', 'command'];
 
-    ganmi(inputArray);
+    ganmi(inputArray, fsStub);
 
-    expect(spy.calls[0].arguments[0])
-      .toEqual(inputArray[0]);
+    expect(spy.calls[0].arguments[0]).toEqual(inputArray[0]);
   });
 
 });
