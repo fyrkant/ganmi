@@ -13,6 +13,7 @@ describe('ganmi function', () => {
 
   it('should call fs.watch with directory as first argument', () => {
     const spy = spyOn(fs, 'watch');
+    spyOn(console, 'log'); //just to shut it up
     const inputArray = ['fakeDirectory', 'command', 'regex'];
 
     ganmi(inputArray);
@@ -32,7 +33,7 @@ describe('ganmi function', () => {
 
   it('should console log friendly message when two or more arguments passed', () => {
     const spy = spyOn(console, 'log');
-    const spy2 = spyOn(fs, 'watch'); //just to stud it to death
+    spyOn(fs, 'watch'); //just to stud it to death
     const inputArray = ['fakeDirectory', 'command', 'regex'];
 
     ganmi(inputArray);
