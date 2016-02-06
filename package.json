@@ -6,7 +6,7 @@
   "bin": "./bin/index.js",
   "scripts": {
     "test": "mocha './tests/**/*-spec.js'",
-    "test:watch": "mocha './tests/**/*-spec.js' --reporter min -w"
+    "test:w": "mocha './tests/**/*-spec.js' --reporter min -w"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/mw222rs/ganmi#readme",
   "devDependencies": {
     "expect": "^1.14.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "mock-fs": "^3.7.0"
   }
 }
