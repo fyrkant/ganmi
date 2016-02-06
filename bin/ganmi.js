@@ -1,20 +1,13 @@
 const fs = require('fs');
 const exec = require('child_process').exec;
+const helptText = require('./string-collection').helptText;
 
 module.exports = (inputArray) => {
-  console.log(inputArray);
+  if (inputArray && inputArray.length >= 2) {
+    const directory = inputArray[0];
+    const command = inputArray[1];
+    const re = inputArray[2] ? new RegExp(inputArray[2]) : '.*'; // matches all files if not set
 
-  const directory = inputArray[0];
-  const command = inputArray[1];
-  const re = inputArray[2] ? new RegExp(inputArray[2]) : '.*'; // matches all files if not set
-
-  if (!directory || !command) {
-    console.log(`Uh oh!
-You need to enter at least:
-  1. a directory to watch
-  2. a command to call
-Optional third is regex to match filename.`);
-  } else {
     console.log(`GANMI IS WATCHING! \nDirectory: ${directory}\nCommand: ${command}\nRegex: ${re}`);
 
     const callbackFn = (event, filename) => filename.match(re) &&
@@ -25,5 +18,7 @@ Optional third is regex to match filename.`);
       }
     );
     fs.watch(directory, callbackFn);
+  } else {
+    console.log(helptText);
   }
 };
