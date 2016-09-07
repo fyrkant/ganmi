@@ -8,7 +8,7 @@ module.exports = (inputArray) => {
     const command = inputArray[1]
     const re = inputArray[2] ? new RegExp(inputArray[2]) : '.*' // matches all files if not set
 
-    console.log(`GANMI IS WATCHING! \nDirectory: ${directory}\nCommand: ${command}\nRegex: ${re}`)
+    console.log(`GANMI IS WATCHING!\nDirectory: ${directory}\nCommand: ${command}\nRegex: ${re}`)
 
     const callbackFn = (event, filename) => filename.match(re) &&
       exec(command, (error, stdout, stderr) => {

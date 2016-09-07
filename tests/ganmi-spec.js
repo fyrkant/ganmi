@@ -40,6 +40,10 @@ describe('ganmi function', () => {
     ganmi(inputArray)
 
     expect(spy.calls[0].arguments[0])
-      .toEqual(`GANMI IS WATCHING! \nDirectory: ${inputArray[0]}\nCommand: ${inputArray[1]}\nRegex: ${new RegExp(inputArray[2])}`)
+      .toEqual(
+`GANMI IS WATCHING!
+Directory: ${inputArray[0]}
+Command: ${inputArray[1]}
+Regex: ${new RegExp(inputArray[2])}`)
   })
 })
